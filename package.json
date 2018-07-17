@@ -1,0 +1,25 @@
+{
+  "name": "week3_espionageproject",
+  "version": "1.0.0",
+  "description": "Link : will provide later...",
+  "main": "dom.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACN4/week3_espionageProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACN4/week3_espionageProject/issues"
+  },
+  "homepage": "https://github.com/FACN4/week3_espionageProject#readme",
+  "dependencies": {
+    "istanbul": "^0.4.5",
+    "nyc": "^12.0.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1"
+  }
+}
