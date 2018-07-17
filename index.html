@@ -2,21 +2,83 @@
 
 <html lang="en">
 <head>
-  <title>    </title>
-  <link href= "style.css"  rel="stylesheet"></link>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> FAC Campus Info</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="shortcut icon" type="image/png" href="http://example.com/favicon.png"/>
 
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 <body>
-  <nav>
-  </nav>
-  <section>
-  <div>
+  <header>
+    <nav class = 'navbar'>
+      <ul class = 'navbar-ul'>
+        <li class = 'navbar-li' href= #introduction>Introduction</li>
+        <li class = 'navbar-li' href= #stats>The Stats</li>
+        <li class = 'navbar-li' href= #campuses >Which Campus Is Which?</li>
+      </ul>
+    </nav>
+  </header>
+  <section id = 'introduction'>
+    <h1> About FAC </h1>
+    <div class = 'txt txt-intro'>
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
     </div>
-    </section>
- <footer>
+  </section>
+  <section id = 'stats'>
+    <h1> The stats! </h2>
+    <div class = 'container container-stats'
+      <div class = 'graph'>
+        <h2> Total commits by campus </h2>
+        <img class = 'barChart' src = 'https://plot.ly/~RPlotBot/3512/count-vs-animals.png' alt = 'Bar chart comparing total commits of each campus'>
+      </div>
+      <div class = 'graph'>
+        <h2> Commits per capita by campus </h2>
+        <img class = 'barChart' src = 'https://plot.ly/~RPlotBot/3512/count-vs-animals.png' alt = 'Bar chart comparing per capital commits of each campus'>
+      </div>
+    </div>
+  </section>
+  <section id = 'campuses'>
+    <h1> Which Campus is Which? </h1>
+    <div id = 'london' class = 'container container-campuses'>
+      <h2> London </h2>
+      <div class = 'txt txt-campuses'>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+      <div>
+        <img class = 'map' src = 'http://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/traffic_primary.jpg?itok=6hVRNcu_&resize=1100x619' alt = 'Map showing the location of the London campus' height="300px">
+      </div>
+    </div>
+    <div id = 'Gaza' class = 'container container-campuses'>
+      <h2> Gaza </h2>
+      <div class = 'txt txt-campuses'>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+      <div>
+        <img class = 'map' src = 'http://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/traffic_primary.jpg?itok=6hVRNcu_&resize=1100x619' alt = 'Map showing the location of the Gaza campus' height="300px">
+      </div>
+    </div>
+    <div id = 'Nazareth' class = 'container container-campuses'>
+      <h2> Nazareth </h2>
+      <div class = 'txt txt-campuses'>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+      <div>
+        <img class = 'map' src = 'http://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/traffic_primary.jpg?itok=6hVRNcu_&resize=1100x619' alt = 'Map showing the location of the Nazareth campus' height="300px">
+      </div>
+    </div>
+  </section>
 
-    </footer>
+  <footer>
+    <p> Designed By Team Espionage
+    </p>
+  </footer>
+</body>
+
 <script src="dom.js"></script>
 <script src="logic-github.js"></script>
 <script src="logic-maps.js"></script>
@@ -25,5 +87,5 @@
 <script src="classes.js"></script>
 
 
-</body>
+
 </html>
