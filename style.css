@@ -5,6 +5,22 @@
 body {
     background-color: #74b9ff;
 }
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #6c5ce7
+}
+li {
+    display: block;
+    width: 60px;
+}
+li:hover {
+    background-color: #74b9ff;
+    color: white;
+}
+
+
 
 .barChart {
   width: 80%;
