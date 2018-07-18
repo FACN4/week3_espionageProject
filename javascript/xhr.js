@@ -1,7 +1,7 @@
-var clAss = require('./classes.js');
-var XMLHttpRequest=require("xmlhttprequest").XMLHttpRequest;
+//var clAss = require('./classes.js');
+// var XMLHttpRequest=require("xmlhttprequest").XMLHttpRequest;
 
-var London = new clAss.Cohort("Nazareth", "https://api.github.com/orgs/FACN4/repos");
+var London = new Cohort("Nazareth", "https://api.github.com/orgs/FACN4/repos");
 
 // cohortApiRequest([London],print); //Test function
 
@@ -17,12 +17,6 @@ function cohortApiRequest(arrOfCohorts,callback) {
       }
     });
   })
-}
-//Test function
-function print(arr){
-  commitUrl = arr[0].orgUrlResponse[2].commits_url;
-  console.log(commitUrl);
-  console.log(commitUrl.substring(0,commitUrl.indexOf("{/sha}")))
 }
 
 function xhrApi(url,callback){
@@ -42,22 +36,52 @@ function xhrApi(url,callback){
 }
 
 
-// filteredProjects = cohortApiRequest([London,Gaza, Naz],filterFunction)
-//
-// function projectApiRequest(arrOfCohorts, callback){
-//   for (cohort in arrOfCohorts){
-//     for (project in cohort.recentProjects){
-//       let url = project.commitsUrl;
-//       xhrApi(url,function(response){
-//         project.commitsUrlResponse = response;
-//         //Counter
-//       }
-//     }
-//   }
-// }
+
+function projectApiRequest(arrOfCohorts, callback){
+  numProjects =  countProjects(arrOfCohorts);
+  arrOfCohorts.forEach(function(cohort){
+    cohortCounter=0;
+    cohort.recentProjects.forEach(function(project){
+      let url = project.commitsUrl;
+      xhrApi(url,function(response){
+        project.commitsUrlResponse = response;
+        counter++;
+        if (counter === numProjects){
+          callback(arrOfCohorts);
+        }
+      })
+    })
+  })
+}
 if (typeof module !== "undefined") {
   module.exports = {
     cohortApiRequest:cohortApiRequest,
     xhrApi:xhrApi
   };       // export to the tests
+}
+
+
+
+
+function pixabyXhrApi(query,id){
+  var apiKey= "?key="+ "9584813-640bae5525454946bf1d1f8ae";
+  var url = "https://pixabay.com/api/" + apiKey + "&q="+query;
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        var response = JSON.parse(xhr.responseText);
+        //manipulate DOM
+        var img = document.getElementById(id);
+        img.src = response.hits[0].largeImageURL;
+      }
+  };
+  xhr.open("GET", url, true);
+  xhr.send();
+}
+
+
+if (typeof module !== "undefined") {
+  module.exports = {
+    pixabyXhrApi : pixabyXhrApi,
+  };
 }
