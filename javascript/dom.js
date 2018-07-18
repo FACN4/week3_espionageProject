@@ -1,6 +1,4 @@
 
-//Create array of all three Cohort object items. Call cohortUnpacking in xhr.js
-//var xhr = require('./xhr.js');
 google.charts.load('current', {'packages':['corechart']});
 
 pixabyXhrApi("graffiti","gza");

@@ -1,4 +1,4 @@
-var YOUR_PERSONAL_ACCESS_TOKEN = "35fcb343b2f25f9b5eaed5a775e6cb9f884ffa84";
+var YOUR_PERSONAL_ACCESS_TOKEN = "746df378aa1c40bf4600e4b729f63014f97cb3e5";
 
 var nazareth = new Cohort("Nazareth", "https://api.github.com/orgs/FACN4/repos");
 var london = new Cohort("London", "https://api.github.com/orgs/fac-14/repos");
@@ -63,8 +63,6 @@ if (typeof module !== "undefined") {
 }
 
 
-
-
 function pixabyXhrApi(query,id){
   var apiKey= "?key="+ '9584813-640bae5525454946bf1d1f8ae';
   var url = "https://pixabay.com/api/" + apiKey + "&q="+query;
@@ -87,32 +85,3 @@ if (typeof module !== "undefined") {
     pixabyXhrApi : pixabyXhrApi,
   };
 }
-
-//Test for cohortApiRequest
-
-// cohortApiRequest([nazareth],
-//   function(arrOfCohorts){
-//     console.log("-------Check for cohortApiRequest-------");
-//     arrOfCohorts[0].recentProjects = [aTeam];
-//     console.log(arrOfCohorts);
-//   }
-// )
-
-// Test for projectApiRequest
-
-// cohortApiRequest([nazareth],
-//   function(arrOfCohorts){
-//     console.log("-------Check for cohortApiRequest-------");
-//     arrOfCohorts[0].recentProjects = [aTeam];
-//     projectApiRequest(arrOfCohorts,
-//       function(arrOfCohorts){
-//         console.log("-------Check for cohortApiRequest-------");
-//         console.log(arrOfCohorts);
-//         console.log(doFunctions.cohortCommits(arrOfCohorts));
-//         console.log(doFunctions.commitsPerCapita(arrOfCohorts));
-//       }
-//     );
-//   }
-// )
-// var aTeam = new Project("Khan","https://api.github.com/repos/FACN4/KhanWebDevelopers/commits");
-// arrOfCohorts
