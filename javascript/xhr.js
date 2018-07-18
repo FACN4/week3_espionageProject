@@ -42,19 +42,23 @@ function xhrApi(url,callback){
 }
 
 
-// filteredProjects = cohortApiRequest([London,Gaza, Naz],filterFunction)
-//
-// function projectApiRequest(arrOfCohorts, callback){
-//   for (cohort in arrOfCohorts){
-//     for (project in cohort.recentProjects){
-//       let url = project.commitsUrl;
-//       xhrApi(url,function(response){
-//         project.commitsUrlResponse = response;
-//         //Counter
-//       }
-//     }
-//   }
-// }
+
+function projectApiRequest(arrOfCohorts, callback){
+  numProjects =  countProjects(arrOfCohorts);
+  arrOfCohorts.forEach(function(cohort){
+    cohortCounter=0;
+    cohort.recentProjects.forEach(function(project){
+      let url = project.commitsUrl;
+      xhrApi(url,function(response){
+        project.commitsUrlResponse = response;
+        counter++;
+        if (counter === numProjects){
+          callback(arrOfCohorts);
+        }
+      })
+    })
+  })
+}
 if (typeof module !== "undefined") {
   module.exports = {
     cohortApiRequest:cohortApiRequest,

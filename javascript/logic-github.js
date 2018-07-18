@@ -37,6 +37,15 @@ var doFunctions = {
   },
   repoCommits: function(arrCohorts){
 
+  },
+  countProjects:function (arrOfCohorts){
+    var counter = 0;
+    arrOfCohorts.forEach(function(cohort){
+      cohort.forEach(function(project){
+        counter++;
+      })
+    })
+    return coutner;
   }
 };
 

@@ -14,6 +14,8 @@ var nazareth = new clAss.Cohort(
 );
 var arrOfCohorts = [london, nazareth];
 
+var arrOfCohorts =  xhr.cohortApiRequest(arrOfCohorts, function(arrOfCohorts) {return filter(arrOfCohorts)});
+
 test("Tape is working", function(t) {
   t.equal(1, 1, "Test");
   t.end();
