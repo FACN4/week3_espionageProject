@@ -1,8 +1,9 @@
 var clAss = require('./classes.js');
+var XMLHttpRequest=require("xmlhttprequest").XMLHttpRequest;
 
 var London = new clAss.Cohort("Nazareth", "https://api.github.com/orgs/FACN4/repos");
 
-cohortApiRequest([London],print); //Test function
+// cohortApiRequest([London],print); //Test function
 
 function cohortApiRequest(arrOfCohorts,callback) {
   var counter = 0;
@@ -12,7 +13,7 @@ function cohortApiRequest(arrOfCohorts,callback) {
       cohort.orgUrlResponse = response;
       counter ++;
       if (counter === arrOfCohorts.length){
-        callback(arrOfCohorts);
+      return  callback(arrOfCohorts);
       }
     });
   })
@@ -25,9 +26,11 @@ function print(arr){
 }
 
 function xhrApi(url,callback){
-  var ACCESSTOKEN = "?access_token="+ "PUTINYOURTOKEN";
+
+  var ACCESSTOKEN = "?access_token="+ "ac0c470c9b3535c42d5fa66cca311d96d8a24d17";
   var url = url + ACCESSTOKEN;
   var xhr = new XMLHttpRequest();
+
   xhr.onreadystatechange = function() {
       if (xhr.readyState == 4 && xhr.status == 200) {
         var response = JSON.parse(xhr.responseText);
@@ -52,3 +55,9 @@ function xhrApi(url,callback){
 //     }
 //   }
 // }
+if (typeof module !== "undefined") {
+  module.exports = {
+    cohortApiRequest:cohortApiRequest,
+    xhrApi:xhrApi
+  };       // export to the tests
+}
