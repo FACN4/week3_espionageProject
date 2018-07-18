@@ -30,11 +30,13 @@
     <div class = 'container container-stats'
       <div class = 'graph'>
         <h2> Total commits by campus </h2>
-        <img class = 'barChart' src = 'https://plot.ly/~RPlotBot/3512/count-vs-animals.png' alt = 'Bar chart comparing total commits of each campus'>
+        <div id="chart_div1" alt = "A bar chart comparing commits by campus">
+        </div>
       </div>
       <div class = 'graph'>
         <h2> Commits per capita by campus </h2>
-        <img class = 'barChart' src = 'https://plot.ly/~RPlotBot/3512/count-vs-animals.png' alt = 'Bar chart comparing per capital commits of each campus'>
+        <div id="chart_div2" alt = "A bar chart comparing commits per capita by campus">
+        </div>
       </div>
     </div>
   </section>
@@ -80,6 +82,7 @@
   <script src="./javascript/logic-github.js"></script>
   <script src="./javascript/logic-maps.js"></script>
   <script src="./javascript/xhr.js"></script>
+  <script src="./javascript/charts.js"></script>
   <script src="./javascript/dom.js"></script>
 
 </body>
