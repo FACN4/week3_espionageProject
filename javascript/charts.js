@@ -1,9 +1,4 @@
- // Put this in HTML with link to this file under it
-
-  // Load the library.
-
 function drawChart(id,chartData,topAxisValue,windowWidth) {
-  console.log(windowWidth);
   var fontSize = 12;
   if (windowWidth>700){
     fontSize = 25;
