@@ -1,9 +1,7 @@
-var clAss = require("./classes.js");
+// var clAss = require("./classes.js");
 
 var doFunctions = {
-  unpackCohort: function(Cohort){
-    //Unpack the cohorts first!
-  },
+
   filterGitHub: function(arrCohorts) {
     // var today = new Date();
     // var todaysDate = today.getFullYear()+''+(today.getMonth()+1)+''+today.getDate();
@@ -31,23 +29,53 @@ var doFunctions = {
 
 
   cohortCommits: function(arrCohorts){
-    return arrCohorts;
+    var result = {};
+    arrCohorts.forEach(function(cohort){
+      var commitCounter = 0;
+      cohort.recentProjects.forEach(function(project){
+        commitCounter += project.commitsUrlResponse.length;
+      })
+      var name = cohort.cohortName;
+      result[name] = commitCounter;
+    })
+    return result;
+  // return wants to look like this: {"Nazareth":200, "London":150, "Gaza":200};
   },
 
   commitsPerCapita: function(arrCohorts){
-    return arrCohorts;
-  },
-  repoCommits: function(arrCohorts){
+    var result={};
+    var keys;
+    // {naz : 20 ,lon: 30}
+    arrCohorts.forEach(function(cohort){
+      var ppl={};
 
+      cohort.recentProjects.forEach(function(project){
+        project.commitsUrlResponse.forEach(function(commita){
+          name = commita.commit.author.name;
+          ppl[name]=1;
+        });
+      });
+      keys=Object.keys(ppl);
+    result[cohort.cohortName]=keys.length;
+    });
+    var totalCommits = doFunctions.cohortCommits(arrCohorts);
+    var result1={};
+    var keys = Object.keys(result)
+    keys.forEach(function(name){
+      result1[name]=totalCommits[name]/result[name];
+    });
+
+    return result1;
   },
+
   countProjects:function (arrOfCohorts){
     var counter = 0;
     arrOfCohorts.forEach(function(cohort){
-      cohort.forEach(function(project){
+      cohort.recentProjects.forEach(function(project){
         counter++;
       })
     })
-    return coutner;
+    return counter;
   }
 };
 
