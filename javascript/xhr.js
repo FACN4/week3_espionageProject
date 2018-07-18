@@ -1,12 +1,9 @@
-//var clAss = require('./classes.js');
-// var XMLHttpRequest=require("xmlhttprequest").XMLHttpRequest;
+var YOUR_PERSONAL_ACCESS_TOKEN = "35fcb343b2f25f9b5eaed5a775e6cb9f884ffa84";
 
 var nazareth = new Cohort("Nazareth", "https://api.github.com/orgs/FACN4/repos");
 var london = new Cohort("London", "https://api.github.com/orgs/fac-14/repos");
 var gaza = new Cohort("Gaza","https://api.github.com/orgs/FACG5/repos")
 var arrOfCohorts = [nazareth,gaza,london];
-
-
 
 
 
@@ -25,7 +22,7 @@ function cohortApiRequest(arrOfCohorts,callback,callback2,callback3) {
 }
 
 function xhrApi(url,callback){
-  var ACCESSTOKEN = "?access_token="+ "c37ff9b134a4da43942371af409e1f0320f03266";
+  var ACCESSTOKEN = "?access_token="+ YOUR_PERSONAL_ACCESS_TOKEN;
   var pageLength = '&per_page=100';
   var url = url + ACCESSTOKEN + pageLength;
   var xhr = new XMLHttpRequest();
@@ -69,7 +66,7 @@ if (typeof module !== "undefined") {
 
 
 function pixabyXhrApi(query,id){
-  var apiKey= "?key="+ "9584813-640bae5525454946bf1d1f8ae";
+  var apiKey= "?key="+ '9584813-640bae5525454946bf1d1f8ae';
   var url = "https://pixabay.com/api/" + apiKey + "&q="+query;
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
