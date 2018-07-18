@@ -7,8 +7,6 @@ var arrOfCohorts = [nazareth,gaza,london];
 
 
 
-
-
 function cohortApiRequest(arrOfCohorts,callback,callback2,callback3) {
   var counter = 0;
   arrOfCohorts.forEach(function(cohort){
@@ -68,7 +66,7 @@ if (typeof module !== "undefined") {
 
 
 function pixabyXhrApi(query,id){
-  var apiKey= "?key="+ YOUR_ACCESS_TOKEN;
+  var apiKey= "?key="+ '9584813-640bae5525454946bf1d1f8ae';
   var url = "https://pixabay.com/api/" + apiKey + "&q="+query;
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
