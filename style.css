@@ -31,6 +31,12 @@ p {
   text-align: justify;
   text-justify: inter-word;
 }
+#Gaza, #Nazareth, #london{
+  padding-top: 0px;
+  padding-bottom: 50px;
+  border-top: 2px solid #b2bec3;
+}
+
 .navbar {
     position: fixed;
     top: 0px;
