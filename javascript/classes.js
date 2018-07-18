@@ -1,7 +1,7 @@
 function Cohort(cohortName, orgRepoUrl) {
   this.cohortName = cohortName;
   this.orgRepoUrl = orgRepoUrl; //e.g. https://api.github.com/orgs/FACN4/repos
-  this.orgUrlResponse = []; // e.g.[object, object,...]
+  this.orgUrlResponse = []; // e.g.[input to the filter function]  is the object api
   this.recentProjects = []; // e.g. [output from logic]
 }
 
