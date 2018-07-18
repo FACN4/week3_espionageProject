@@ -6,9 +6,9 @@ function drawChart(id,chartData,topAxisValue,windowWidth) {
 
   var  data = google.visualization.arrayToDataTable([
     ['Campus', 'Commits', { role: 'style' } ],
-    ['Nazareth', chartData.Nazareth, 'color: #d63031'],
-    ['London', chartData.London, 'color: #00b894'],
-    ['Gaza', chartData.Gaza, 'color: #0984e3']]);
+    ['Nazareth', Math.round(chartData.Nazareth), 'color: #d63031'],
+    ['London', Math.round(chartData.London), 'color: #00b894'],
+    ['Gaza', Math.round(chartData.Gaza), 'color: #0984e3']]);
 
 
 	var view = new google.visualization.DataView(data);
