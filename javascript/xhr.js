@@ -1,4 +1,6 @@
-var YOUR_PERSONAL_ACCESS_TOKEN = "746df378aa1c40bf4600e4b729f63014f97cb3e5";
+
+var YOUR_PERSONAL_ACCESS_TOKEN = access_token;
+
 
 var nazareth = new Cohort("Nazareth", "https://api.github.com/orgs/FACN4/repos");
 var london = new Cohort("London", "https://api.github.com/orgs/fac-14/repos");
