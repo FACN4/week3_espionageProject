@@ -3,7 +3,7 @@
 
 var doFunctions = {
 
-  filterGitHub: function(arrCohorts) {
+  filterGitHub: function(arrCohorts,callback, callback2) {
 
 
     // var today = new Date();
@@ -16,13 +16,14 @@ var doFunctions = {
         var repoDate = Number(repo.created_at.slice(0,10).replace(/-/g,''));
         if (repoDate > 20180710){
           var name = repo.name;
-          var url = repo.commits_url;
-          var proj = new clAss.Project(name,url);
+          var rawUrl = repo.commits_url;
+          var url = rawUrl.slice(0,rawUrl.indexOf('{'));
+          var proj = new Project(name,url);
           cohort.recentProjects.push(proj);
         }
       });
     });
-     return callback(arrOfCohorts);
+     return callback(arrOfCohorts, callback2);
   },
     //Denis code end
     // for (var i = 0; i < arrOfCohorts.length; i++) {
