@@ -25,7 +25,7 @@ function cohortApiRequest(arrOfCohorts,callback,callback2,callback3) {
 }
 
 function xhrApi(url,callback){
-  var ACCESSTOKEN = "?access_token="+ "330689b4d360686c3e2a1c21c3685565e4126499";
+  var ACCESSTOKEN = "?access_token="+ "c37ff9b134a4da43942371af409e1f0320f03266";
   var pageLength = '&per_page=100';
   var url = url + ACCESSTOKEN + pageLength;
   var xhr = new XMLHttpRequest();

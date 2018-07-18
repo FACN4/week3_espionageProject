@@ -3,37 +3,74 @@
 /* mobile first */
 
 body {
+    background-color: #ccffff;
+    font-family: 'Exo 2', sans-serif;
+}
+section {
+  font-family: 'Exo 2', sans-serif;
+  padding: 10% 10% 10% 10%;
+  border-top: 5px solid #2d3436;
+};
+footer {
+  font-family: 'Exo 2', sans-serif;
+  padding: 0% 10% 0% 10%;
+  border-top: 5px solid #2d3436;
+}
+h1 {
+  font-family: 'Chela One', cursive;
+  font-size: 30px;
+}
+h2 {
+  font-size: 15px;
+}
+h3 {
+  font-size: 20px;
+}
+p {
+  font-family: 'Exo 2', sans-serif;
+  text-align: justify;
+  text-justify: inter-word;
+}
+.navbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    font-family: 'Exo 2', sans-serif;
+    display: flex;
+    justify-content: space-around;
     background-color: #74b9ff;
+    height: 8%;
+    z-index: 1;
 }
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: #6c5ce7
-}
-li {
+.navbar a {
+    width: 100%
     display: block;
-    width: 60px;
+    text-decoration: none;
+    position: relative;
+    font-family: 'Exo 2', sans-serif;
 }
-li:hover {
-    background-color: #74b9ff;
-    color: white;
+.navbar a:hover{
+    background-color: whit;
+};
+
+
+.txt-campuses {
+  padding: 10% 5% 0% 5%;
 }
 
 
 
-.barChart {
-  width: 80%;
+.photo {
+  width: 100%;
 }
-.map {
-  width: 80%;
-}
+
 
 /* Desktop */
 @media only screen and (min-width: 600px) {
   .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
   }
 
   }
