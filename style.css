@@ -1,0 +1,24 @@
+
+
+/* mobile first */
+
+body {
+    background-color: #74b9ff;
+}
+
+.barChart {
+  width: 80%;
+}
+.map {
+  width: 80%;
+}
+
+/* Desktop */
+@media only screen and (min-width: 600px) {
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  }
+}
