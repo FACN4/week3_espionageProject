@@ -13,7 +13,7 @@ section {
 };
 footer {
   font-family: 'Exo 2', sans-serif;
-  padding:0% 10% 0% 10%;
+  padding: 0% 10% 0% 10%;
   border-top: 5px solid #2d3436;
 }
 h1 {
@@ -41,6 +41,7 @@ p {
     justify-content: space-around;
     background-color: #74b9ff;
     height: 8%;
+    z-index: 1;
 }
 .navbar a {
     width: 100%
@@ -59,18 +60,17 @@ p {
 }
 
 
-.barChart {
-  width: 80%;
+
+.photo {
+  width: 100%;
 }
-.map {
-  width: 80%;
-}
+
 
 /* Desktop */
 @media only screen and (min-width: 600px) {
   .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
   }
 
   }
