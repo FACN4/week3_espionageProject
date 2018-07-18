@@ -4,7 +4,7 @@
   "description": "Link : will provide later...",
   "main": "dom.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc tape javascript/test.js | tap-spec"
   },
   "repository": {
     "type": "git",

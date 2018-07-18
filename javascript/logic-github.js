@@ -1,12 +1,12 @@
 var doFunctions = {
   unpackCohort: function(Cohort){
     //Unpack the cohorts first!
-  }
+  },
   filterGitHub: function(arrCohorts) {
 
     //Receives FACN4 Cohort class object
     //Returns FACN4 Cohort class object with recentProjects
-    return obj;
+    return 0;
   },
   cohortCommits: function(arrCohorts){
     return arrCohorts;
