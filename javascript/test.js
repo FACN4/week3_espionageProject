@@ -1,23 +1,34 @@
 var doFunctions = require("./logic-github");
 var clAss = require("./classes.js");
 var xhr = require("./xhr.js");
+var temp = require("../temporaryFile.js");
 const test = require("tape-async");
 const sleep = require("sleep-promise");
 
-var london = new clAss.Cohort(
-  "london",
-  "https://api.github.com/orgs/fac-14/repos"
-);
-var nazareth = new clAss.Cohort(
-  "nazareth",
-  "https://api.github.com/orgs/FACN4/repos"
-);
-//var arrOfCohorts = [london, nazareth];
+// var london = new clAss.Cohort(
+//   "london",
+//   "https://api.github.com/orgs/fac-14/repos"
+// );
+// var nazareth = new clAss.Cohort(
+//   "nazareth",
+//   "https://api.github.com/orgs/FACN4/repos"
+// );
+// //var arrOfCohorts = [london, nazareth];
 
 //var arrOfCohorts =  xhr.cohortApiRequest(arrOfCohorts, function(arrOfCohorts) {return filter(arrOfCohorts)});
 
-test("Tape is working", function(t) {
-  t.equal(1, 1, "Test");
+// test("Tape is working", function(t) {
+//   t.equal(1, 1, "Test");
+//   t.end();
+// });
+
+test("filterFunction", function(t) {
+  t.deepEqual(doFunctions.filterGitHub(temp.filterTestInput1,function(x){return x;}), temp.filterTestExpected1, "lon.recentProjects should equal []");
+  t.deepEqual(doFunctions.filterGitHub(temp.filterTestInput3,function(x){return x;}), temp.filterTestExpected3, "RecentProjects should contain one object");
+  //
+  // console.log(filterGitHub(temp.filterTestInput3));
+  t.deepEqual(doFunctions.filterGitHub(temp.filterTestInput2,function(x){return x;}), temp.filterTestExpected2, "should delete 1 repo");
+  //   console.log(doFunctions.filterGitHub(temp.filterTestInput2));
   t.end();
 });
 
