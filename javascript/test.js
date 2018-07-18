@@ -12,9 +12,9 @@ var nazareth = new clAss.Cohort(
   "nazareth",
   "https://api.github.com/orgs/FACN4/repos"
 );
-var arrOfCohorts = [london, nazareth];
+//var arrOfCohorts = [london, nazareth];
 
-var arrOfCohorts =  xhr.cohortApiRequest(arrOfCohorts, function(arrOfCohorts) {return filter(arrOfCohorts)});
+//var arrOfCohorts =  xhr.cohortApiRequest(arrOfCohorts, function(arrOfCohorts) {return filter(arrOfCohorts)});
 
 test("Tape is working", function(t) {
   t.equal(1, 1, "Test");
