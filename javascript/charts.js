@@ -1,8 +1,5 @@
  // Put this in HTML with link to this file under it<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js">
 
-
-
-
   // Load the library.
 google.charts.load('current', {'packages':['corechart']});
 var chartData = {"FACN4":2.7, "FAC14":2.2, "FACG5":2.3};

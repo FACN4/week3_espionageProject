@@ -5,7 +5,7 @@ var doFunctions = {
   filterGitHub: function(arrCohorts) {
 
     //Receives FACN4 Cohort class object
-    //Returns FACN4 Cohort class object with replaced recentProject
+    //Returns FACN4 Cohort class object with recentProjects
     return obj;
   },
   cohortCommits: function(arrCohorts){
