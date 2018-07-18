@@ -1,9 +1,36 @@
 //var clAss = require('./classes.js');
 // var XMLHttpRequest=require("xmlhttprequest").XMLHttpRequest;
 
-var London = new Cohort("Nazareth", "https://api.github.com/orgs/FACN4/repos");
+var nazareth = new Cohort("Nazareth", "https://api.github.com/orgs/FACN4/repos");
+var aTeam = new Project("Khan","https://api.github.com/repos/FACN4/KhanWebDevelopers/commits");
 
-// cohortApiRequest([London],print); //Test function
+//Test for cohortApiRequest
+
+// cohortApiRequest([nazareth],
+//   function(arrOfCohorts){
+//     console.log("-------Check for cohortApiRequest-------");
+//     arrOfCohorts[0].recentProjects = [aTeam];
+//     console.log(arrOfCohorts);
+//   }
+// )
+
+// Test for projectApiRequest
+
+cohortApiRequest([nazareth],
+  function(arrOfCohorts){
+    console.log("-------Check for cohortApiRequest-------");
+    arrOfCohorts[0].recentProjects = [aTeam];
+    projectApiRequest(arrOfCohorts,
+      function(arrOfCohorts){
+        console.log("-------Check for cohortApiRequest-------");
+        console.log(arrOfCohorts);
+        console.log(doFunctions.cohortCommits(arrOfCohorts));
+        console.log(doFunctions.commitsPerCapita(arrOfCohorts));
+      }
+    );
+  }
+)
+
 
 function cohortApiRequest(arrOfCohorts,callback) {
   var counter = 0;
@@ -21,7 +48,7 @@ function cohortApiRequest(arrOfCohorts,callback) {
 
 function xhrApi(url,callback){
 
-  var ACCESSTOKEN = "?access_token="+ "ac0c470c9b3535c42d5fa66cca311d96d8a24d17";
+  var ACCESSTOKEN = "?access_token="+ "b4bfefe3ac4c339cc3a61e3e534c7c4b873058ce";
   var url = url + ACCESSTOKEN;
   var xhr = new XMLHttpRequest();
 
@@ -38,9 +65,9 @@ function xhrApi(url,callback){
 
 
 function projectApiRequest(arrOfCohorts, callback){
-  numProjects =  countProjects(arrOfCohorts);
+  numProjects =  doFunctions.countProjects(arrOfCohorts);
   arrOfCohorts.forEach(function(cohort){
-    cohortCounter=0;
+    var counter=0;
     cohort.recentProjects.forEach(function(project){
       let url = project.commitsUrl;
       xhrApi(url,function(response){
