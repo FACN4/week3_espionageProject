@@ -2,9 +2,6 @@ var doFunctions = {
   unpackCohort: function(Cohort){
     //Unpack the cohorts first!
   },
-
-
-
   filterGitHub: function(arrCohorts) {
     var today = new Date();
     var todaysDate = today.getFullYear()+''+(today.getMonth()+1)+''+today.getDate();
