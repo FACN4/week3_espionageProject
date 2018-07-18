@@ -3,7 +3,11 @@
   // Load the library.
 
 function drawChart(id,chartData,topAxisValue,windowWidth) {
-
+  console.log(windowWidth);
+  var fontSize = 12;
+  if (windowWidth>700){
+    fontSize = 25;
+  }
   var  data = google.visualization.arrayToDataTable([
     ['Campus', 'Commits', { role: 'style' } ],
     ['Nazareth', Math.round(chartData.Nazareth), 'color: #d63031'],
@@ -24,7 +28,10 @@ function drawChart(id,chartData,topAxisValue,windowWidth) {
     height:windowWidth*0.5,
     backgroundColor: '#ccffff',
 
-    chartArea: {'width': '100%', 'height': '80%'},
+    chartArea: {
+      'width': '100%',
+      'height': '70%',
+    },
     legend: {position: 'none'},
     bar: {groupWidth: "50%"},
     animation:{
@@ -34,7 +41,7 @@ function drawChart(id,chartData,topAxisValue,windowWidth) {
   	},
     annotations: {
   			textStyle: {
-   			fontSize: 20,
+   			fontSize: fontSize,
   				},
       stemColor : 'none',
   			alwaysOutside: true
@@ -43,7 +50,7 @@ function drawChart(id,chartData,topAxisValue,windowWidth) {
   	baselineColor: 'none',
     ticks: [],
     textStyle : {
-      fontSize: 16
+      fontSize: fontSize
   	}
   },
     vAxis: {
