@@ -4,6 +4,7 @@ pixabyXhrApi("graffiti", "gza");
 pixabyXhrApi("nazareth", "naz");
 pixabyXhrApi("london", "lon");
 
+
 cohortApiRequest(
   arrOfCohorts,
   doFunctions.filterGitHub,
