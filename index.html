@@ -3,13 +3,12 @@
 <html lang="en">
 <head>
   <title> FAC Campus Info</title>
-  <link href="https://fonts.googleapis.com/css?family=Chela+One|Exo+2|Permanent+Marker" rel="stylesheet">
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="shortcut icon" type="image/png" href="http://example.com/favicon.png"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-<body>
+<body link="navy" alink="red" vlink="white">
   <header>
     <nav class = 'navbar'>
       <a href="#introduction">Introduction</a>
@@ -22,17 +21,17 @@
     <div class = 'txt txt-intro'>
       <p> Welcome to the official FAC campus comparison site. This a site for members of Founders and Coders (FAC) to checkout what all the other campuses are up to. You could call it spying, but we prefer not to. There are two main sections.<br>
       <br>
-      <strong>The Stats:</strong> <br>
+      <strong><u>The Stats:</u></strong> <br>
       This looks at the repositorys created in the last 7 days and shows the total commits and per capita commits made by each Campus. This data is live and fresh API calls are made when the page is refreshed. In time, this page could include more detailed analysis way the various campuses use Github. This could inclue 'famous last words' (the final commit message of a project), name and shame branch names or commits with stupid names like 'whateva', 'Updates' or 'blah'. The sky's the limit.<br>
       <br>
-      <strong>Which Campis is Which:</strong> <br>
+      <strong><u>Which Campis is Which:</u></strong> <br>
       Give a small bio on each of the Campuses and and a location relevent photo. Future additions could be total number of students, the current mentors, team photos and much much more.
       </p>
     </div>
   </section>
   <section id = 'stats'>
-    <h1> The Stats! </h2>
-    <div class = 'container container-stats'
+    <h1> The Stats! </h1>
+    <div class = 'container container-stats'>
       <div>
         <h2> Total commits by campus </h2>
         <div class = 'graph' id="chart_div1" alt = "A bar chart comparing commits by campus">
@@ -80,7 +79,7 @@
   </section>
 
   <footer>
-    <p> Designed By Team Espionage
+    <p id="designed"> Designed By Team Espionage
     </p>
   </footer>
   <script src="./javascript/token.js"></script>
