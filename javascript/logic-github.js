@@ -30,7 +30,7 @@ var doFunctions = {
           var name = repo.name;
           var rawUrl = repo.commits_url;
           var url = rawUrl.slice(0,rawUrl.indexOf('{'));
-          var proj = new Project(name,url);
+          var proj = new construc.Project(name,url);
           cohort.recentProjects.push(proj);
         }
       });
