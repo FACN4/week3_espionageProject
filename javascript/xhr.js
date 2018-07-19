@@ -1,11 +1,11 @@
 var YOUR_PERSONAL_ACCESS_TOKEN = access_token;
 
-var nazareth = new Cohort(
+var nazareth = new construc.Cohort(
   "Nazareth",
   "https://api.github.com/orgs/FACN4/repos"
 );
-var london = new Cohort("London", "https://api.github.com/orgs/fac-14/repos");
-var gaza = new Cohort("Gaza", "https://api.github.com/orgs/FACG5/repos");
+var london = new construc.Cohort("London", "https://api.github.com/orgs/fac-14/repos");
+var gaza = new construc.Cohort("Gaza", "https://api.github.com/orgs/FACG5/repos");
 var arrOfCohorts = [nazareth, gaza, london];
 
 function cohortApiRequest(arrOfCohorts, callback, callback2, callback3) {
