@@ -11,9 +11,7 @@ var construc = {
     this.commitsUrl = commitsUrl;
     this.commitsUrlResponse = []; //Will become an array of objects
   }
-
-
-}
+};
 if (typeof module !== "undefined") {
-  module.exports =  construc;
+  module.exports = construc;
 }

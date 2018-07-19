@@ -7,52 +7,118 @@ test("Tape is working", function(t) {
 });
 
 test("filterFunction", function(t) {
-  t.deepEqual(doFunctions.filterGitHub(filterTestInput1,function(x){return x;}), filterTestExpected1, "lon.recentProjects should equal []");
-  t.deepEqual(doFunctions.filterGitHub(filterTestInput3,function(x){return x;}), filterTestExpected3, "RecentProjects should contain one object");
+  t.deepEqual(
+    doFunctions.filterGitHub(filterTestInput1, function(x) {
+      return x;
+    }),
+    filterTestExpected1,
+    "lon.recentProjects should equal []"
+  );
+  t.deepEqual(
+    doFunctions.filterGitHub(filterTestInput3, function(x) {
+      return x;
+    }),
+    filterTestExpected3,
+    "RecentProjects should contain one object"
+  );
 
-  t.deepEqual(doFunctions.filterGitHub(filterTestInput2,function(x){return x;}), filterTestExpected2, "should delete 1 repo");
+  t.deepEqual(
+    doFunctions.filterGitHub(filterTestInput2, function(x) {
+      return x;
+    }),
+    filterTestExpected2,
+    "should delete 1 repo"
+  );
   t.end();
 });
 
-
-var lon={
+var lon = {
   cohortName: "Ldon",
   orgRepoUrl: "orgRepoUrl", //e.g. https://api.github.com/orgs/FACN4/repos
-  orgUrlResponse: [{created_at: "2018-07-02T08:59:30Z", commits_url:"https://api.github.com/repos/FACN4/mubbles/commits", name: "mubbles"}], // e.g.[input to the filter function]
-  recentProjects: []  // e.g. [output from logic]
-};
-
-var lon1={
-  cohortName: "Ldon",
-  orgRepoUrl: "orgRepoUrl", //e.g. https://api.github.com/orgs/FACN4/repos
-  orgUrlResponse: [{created_at: "2018-07-02T08:59:30Z", commits_url:"https://api.github.com/repos/FACN4/mubbles/commits", name: "mubbles"},{created_at: "2018-07-17T08:59:30Z", commits_url:"https://api.github.com/repos/FACN4/mubbles/commits", name: "hoooo"}], // e.g.[input to the filter function]
+  orgUrlResponse: [
+    {
+      created_at: "2018-07-02T08:59:30Z",
+      commits_url: "https://api.github.com/repos/FACN4/mubbles/commits",
+      name: "mubbles"
+    }
+  ], // e.g.[input to the filter function]
   recentProjects: [] // e.g. [output from logic]
 };
-var lon2={
+
+var lon1 = {
   cohortName: "Ldon",
   orgRepoUrl: "orgRepoUrl", //e.g. https://api.github.com/orgs/FACN4/repos
-  orgUrlResponse: [{created_at: "2018-07-02T08:59:30Z", commits_url:"https://api.github.com/repos/FACN4/mubbles/commits", name: "mubbles"},{created_at: "2018-07-17T08:59:30Z", commits_url:"https://api.github.com/repos/FACN4/mubbles/commits", name: "hoooo"}], // e.g.[input to the filter function]
-  recentProjects: [{ projectName: 'hoooo', commitsUrl: 'https://api.github.com/repos/FACN4/mubbles/commits', commitsUrlResponse: [] }] // e.g. [output from logic]
+  orgUrlResponse: [
+    {
+      created_at: "2018-07-02T08:59:30Z",
+      commits_url: "https://api.github.com/repos/FACN4/mubbles/commits",
+      name: "mubbles"
+    },
+    {
+      created_at: "2018-07-17T08:59:30Z",
+      commits_url: "https://api.github.com/repos/FACN4/mubbles/commits",
+      name: "hoooo"
+    }
+  ], // e.g.[input to the filter function]
+  recentProjects: [] // e.g. [output from logic]
+};
+var lon2 = {
+  cohortName: "Ldon",
+  orgRepoUrl: "orgRepoUrl", //e.g. https://api.github.com/orgs/FACN4/repos
+  orgUrlResponse: [
+    {
+      created_at: "2018-07-02T08:59:30Z",
+      commits_url: "https://api.github.com/repos/FACN4/mubbles/commits",
+      name: "mubbles"
+    },
+    {
+      created_at: "2018-07-17T08:59:30Z",
+      commits_url: "https://api.github.com/repos/FACN4/mubbles/commits",
+      name: "hoooo"
+    }
+  ], // e.g.[input to the filter function]
+  recentProjects: [
+    {
+      projectName: "hoooo",
+      commitsUrl: "https://api.github.com/repos/FACN4/mubbles/commits",
+      commitsUrlResponse: []
+    }
+  ] // e.g. [output from logic]
 };
 var lon3 = {
   cohortName: "Ldon",
   orgRepoUrl: "orgRepoUrl", //e.g. https://api.github.com/orgs/FACN4/repos
-  orgUrlResponse: [{created_at: "2018-07-17T08:59:30Z", commits_url: "https://api.github.com/repos/FACN4/mubbles/commits", name: "hoooo"}], // e.g.[input to the filter function]
+  orgUrlResponse: [
+    {
+      created_at: "2018-07-17T08:59:30Z",
+      commits_url: "https://api.github.com/repos/FACN4/mubbles/commits",
+      name: "hoooo"
+    }
+  ], // e.g.[input to the filter function]
   recentProjects: [] // e.g. [output from logic]
 };
 var lon4 = {
   cohortName: "Ldon",
   orgRepoUrl: "orgRepoUrl", //e.g. https://api.github.com/orgs/FACN4/repos
-  orgUrlResponse: [{created_at: "2018-07-17T08:59:30Z", commits_url:"https://api.github.com/repos/FACN4/mubbles/commits", name: "hoooo"}], // e.g.[input to the filter function]
+  orgUrlResponse: [
+    {
+      created_at: "2018-07-17T08:59:30Z",
+      commits_url: "https://api.github.com/repos/FACN4/mubbles/commits",
+      name: "hoooo"
+    }
+  ], // e.g.[input to the filter function]
   recentProjects: [
-    { projectName: 'hoooo', commitsUrl: 'https://api.github.com/repos/FACN4/mubbles/commits', commitsUrlResponse: [] }
+    {
+      projectName: "hoooo",
+      commitsUrl: "https://api.github.com/repos/FACN4/mubbles/commits",
+      commitsUrlResponse: []
+    }
   ]
 };
 
-
 var filterTestInput1 = [lon];
 var filterTestExpected1 = [lon];
-var filterTestInput2=[lon1];
-var filterTestExpected2=[lon2];
-var filterTestInput3=[lon3];
-var filterTestExpected3=[lon4];
+var filterTestInput2 = [lon1];
+var filterTestExpected2 = [lon2];
+var filterTestInput3 = [lon3];
+var filterTestExpected3 = [lon4];

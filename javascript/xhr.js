@@ -10,7 +10,8 @@ var arrOfCohorts = [nazareth, gaza, london];
 
 function cohortApiRequest(arrOfCohorts, callback, callback2, callback3) {
   var counter = 0;
-  arrOfCohorts.forEach(function(cohort) {
+  arrOfCohort;
+s.forEach(function(cohort) {
     var url = gitHubURLGen(cohort.orgRepoUrl);
     xhrApi(url, function(response) {
       cohort.orgUrlResponse = response;
