@@ -4,14 +4,19 @@ var nazareth = new construc.Cohort(
   "Nazareth",
   "https://api.github.com/orgs/FACN4/repos"
 );
-var london = new construc.Cohort("London", "https://api.github.com/orgs/fac-14/repos");
-var gaza = new construc.Cohort("Gaza", "https://api.github.com/orgs/FACG5/repos");
+var london = new construc.Cohort(
+  "London",
+  "https://api.github.com/orgs/fac-14/repos"
+);
+var gaza = new construc.Cohort(
+  "Gaza",
+  "https://api.github.com/orgs/FACG5/repos"
+);
 var arrOfCohorts = [nazareth, gaza, london];
 
 function cohortApiRequest(arrOfCohorts, callback, callback2, callback3) {
   var counter = 0;
-  arrOfCohort;
-s.forEach(function(cohort) {
+  arrOfCohorts.forEach(function(cohort) {
     var url = gitHubURLGen(cohort.orgRepoUrl);
     xhrApi(url, function(response) {
       cohort.orgUrlResponse = response;
