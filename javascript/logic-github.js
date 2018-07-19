@@ -1,6 +1,6 @@
 var doFunctions = {
 
-  filterGitHub: function(arrCohorts,callback, callback2) {
+  filterGitHub: function(arrCohorts) {
 
     arrOfCohorts.forEach(function(cohort){
       //Shifted the 7 day window of commits for Gaza and Nazareth to match London
@@ -24,7 +24,7 @@ var doFunctions = {
       var todayDate = yyyy.toString()+mm.toString()+dd.toString()
 
 
-      cohort.orgUrlResponse.forEach(function(repo){
+      cohort.APIresponse.forEach(function(repo){
         var repoDate = Number(repo.created_at.slice(0,10).replace(/-/g,''));
         if (repoDate > Number(lastweek) && repoDate <= Number(todayDate)){
           var name = repo.name;
@@ -35,7 +35,7 @@ var doFunctions = {
         }
       });
     });
-     return callback(arrOfCohorts, callback2);
+     return arrOfCohorts;
   },
 
   cohortCommits: function(arrCohorts){
@@ -43,7 +43,7 @@ var doFunctions = {
     arrCohorts.forEach(function(cohort){
       var commitCounter = 0;
       cohort.recentProjects.forEach(function(project){
-        commitCounter += project.commitsUrlResponse.length;
+        commitCounter += project.APIresponse.length;
       })
       var name = cohort.cohortName;
       result[name] = commitCounter;
@@ -60,7 +60,7 @@ var doFunctions = {
       var ppl={};
 
       cohort.recentProjects.forEach(function(project){
-        project.commitsUrlResponse.forEach(function(commita){
+        project.APIresponse.forEach(function(commita){
           name = commita.commit.author.name;
           ppl[name]=1;
         });
@@ -94,7 +94,7 @@ var doFunctions = {
     var shame = [];
     arrOfCohorts.forEach(function(cohort){
       cohort.recentProjects.forEach(function(project){
-        project.commitsUrlResponse.forEach(function(commita){
+        project.APIresponse.forEach(function(commita){
           var name = commita.commit.author.name;
           var message = commita.commit.message;
           var messageShort = message.split(/[\s,-_]+/).length === 1

@@ -34,8 +34,8 @@ test("filterFunction", function(t) {
 
 var lon = {
   cohortName: "Ldon",
-  orgRepoUrl: "orgRepoUrl", //e.g. https://api.github.com/orgs/FACN4/repos
-  orgUrlResponse: [
+  APIUrl: "APIUrl", //e.g. https://api.github.com/orgs/FACN4/repos
+  APIresponse: [
     {
       created_at: "2018-07-02T08:59:30Z",
       commits_url: "https://api.github.com/repos/FACN4/mubbles/commits",
@@ -47,8 +47,8 @@ var lon = {
 
 var lon1 = {
   cohortName: "Ldon",
-  orgRepoUrl: "orgRepoUrl", //e.g. https://api.github.com/orgs/FACN4/repos
-  orgUrlResponse: [
+  APIUrl: "APIUrl", //e.g. https://api.github.com/orgs/FACN4/repos
+  APIresponse: [
     {
       created_at: "2018-07-02T08:59:30Z",
       commits_url: "https://api.github.com/repos/FACN4/mubbles/commits",
@@ -64,8 +64,8 @@ var lon1 = {
 };
 var lon2 = {
   cohortName: "Ldon",
-  orgRepoUrl: "orgRepoUrl", //e.g. https://api.github.com/orgs/FACN4/repos
-  orgUrlResponse: [
+  APIUrl: "APIUrl", //e.g. https://api.github.com/orgs/FACN4/repos
+  APIresponse: [
     {
       created_at: "2018-07-02T08:59:30Z",
       commits_url: "https://api.github.com/repos/FACN4/mubbles/commits",
@@ -80,15 +80,15 @@ var lon2 = {
   recentProjects: [
     {
       projectName: "hoooo",
-      commitsUrl: "https://api.github.com/repos/FACN4/mubbles/commits",
-      commitsUrlResponse: []
+      APIUrl: "https://api.github.com/repos/FACN4/mubbles/commits",
+      APIresponse: []
     }
   ] // e.g. [output from logic]
 };
 var lon3 = {
   cohortName: "Ldon",
-  orgRepoUrl: "orgRepoUrl", //e.g. https://api.github.com/orgs/FACN4/repos
-  orgUrlResponse: [
+  APIUrl: "APIUrl", //e.g. https://api.github.com/orgs/FACN4/repos
+  APIresponse: [
     {
       created_at: "2018-07-17T08:59:30Z",
       commits_url: "https://api.github.com/repos/FACN4/mubbles/commits",
@@ -99,8 +99,8 @@ var lon3 = {
 };
 var lon4 = {
   cohortName: "Ldon",
-  orgRepoUrl: "orgRepoUrl", //e.g. https://api.github.com/orgs/FACN4/repos
-  orgUrlResponse: [
+  APIUrl: "APIUrl", //e.g. https://api.github.com/orgs/FACN4/repos
+  APIresponse: [
     {
       created_at: "2018-07-17T08:59:30Z",
       commits_url: "https://api.github.com/repos/FACN4/mubbles/commits",
@@ -110,8 +110,8 @@ var lon4 = {
   recentProjects: [
     {
       projectName: "hoooo",
-      commitsUrl: "https://api.github.com/repos/FACN4/mubbles/commits",
-      commitsUrlResponse: []
+      APIUrl: "https://api.github.com/repos/FACN4/mubbles/commits",
+      APIresponse: []
     }
   ]
 };

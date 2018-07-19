@@ -5,11 +5,7 @@ pixabyXhrApi("nazareth", "naz");
 pixabyXhrApi("london", "lon");
 
 
-cohortApiRequest(
-  arrOfCohorts,
-  doFunctions.filterGitHub,
-  projectApiRequest,
-  function(arrOfCohorts) {
+cohortApiRequest(arrOfCohorts,function(arrOfCohorts) {
     //Total commits data prep
     var totalCommitData = doFunctions.cohortCommits(arrOfCohorts);
     var totalCommitsMaxValue = Object.values(totalCommitData).reduce(function(

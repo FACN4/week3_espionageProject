@@ -1,17 +1,32 @@
 var construc = {
-  Cohort: function(cohortName, orgRepoUrl) {
+  Cohort: function(cohortName, APIUrl) {
     this.cohortName = cohortName;
-    this.orgRepoUrl = orgRepoUrl; //e.g. https://api.github.com/orgs/FACN4/repos
-    this.orgUrlResponse = []; // e.g.[input to the filter function]  is the object api
+    this.APIUrl = APIUrl; // for repos https://api.github.com/orgs/FACN4/repos
+    this.APIresponse = []; // e.g.[input to the filter function]  is the object api
     this.recentProjects = []; // e.g. [output from logic]
   },
 
-  Project: function(projectName, commitsUrl) {
+  Project: function(projectName, APIUrl) {
     this.projectName = projectName;
-    this.commitsUrl = commitsUrl;
-    this.commitsUrlResponse = []; //Will become an array of objects
+    this.APIUrl = APIUrl; // for commits
+    this.APIresponse = []; //Will become an array of objects
   }
 };
+
+var nazareth = new construc.Cohort(
+  "Nazareth",
+  "https://api.github.com/orgs/FACN4/repos"
+);
+var london = new construc.Cohort(
+  "London",
+  "https://api.github.com/orgs/fac-14/repos"
+);
+var gaza = new construc.Cohort(
+  "Gaza",
+  "https://api.github.com/orgs/FACG5/repos"
+);
+
+
 if (typeof module !== "undefined") {
   module.exports = construc;
 }
