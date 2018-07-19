@@ -88,7 +88,32 @@ var doFunctions = {
       })
     })
     return counter;
+  },
+
+  boxOfShame:function(arrOfCohorts){
+    var shame = [];
+    arrOfCohorts.forEach(function(cohort){
+      cohort.recentProjects.forEach(function(project){
+        project.commitsUrlResponse.forEach(function(commita){
+          var name = commita.commit.author.name;
+          var message = commita.commit.message;
+          var messageShort = message.split(/[\s,-_]+/).length === 1
+          var messageSilly = false;
+          var sillyKeywords = ["something","whatever","whateva","stuff"]
+          sillyKeywords.forEach(function(keyword){
+            if (message.toLowerCase().includes(keyword)){
+              messageSilly = true;
+            }
+          })
+          if(messageShort||messageSilly){
+            shame.push({cohortName:cohort.cohortName, commiterName:name, commitMessage:message});
+          }
+        })
+      })
+    })
+    return shame;
   }
+
 };
 
 
