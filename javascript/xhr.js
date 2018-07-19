@@ -74,7 +74,7 @@ function pixabyXhrApi(query,id){
         var response = JSON.parse(xhr.responseText);
         //manipulate DOM
         var img = document.getElementById(id);
-        img.src = response.hits[6].largeImageURL;
+        img.src = response.hits[Math.floor(Math.random() * 6) ].largeImageURL;
       }
   };
   xhr.open("GET", url, true);
