@@ -1,7 +1,11 @@
 function drawChart(id,chartData,topAxisValue,windowWidth) {
   var fontSize = 12;
+  var widthx = windowWidth*0.75;
+  var heightx = windowWidth*0.6;
   if (windowWidth>700){
-    fontSize = 25;
+    fontSize = 20;
+    widthx = windowWidth*0.3;
+    heightx = windowWidth*0.35;
   }
   var  data = google.visualization.arrayToDataTable([
     ['Campus', 'Commits', { role: 'style' } ],
@@ -19,8 +23,8 @@ function drawChart(id,chartData,topAxisValue,windowWidth) {
                    2]);
 
   var options = {
-  	width:windowWidth*0.7,
-    height:windowWidth*0.5,
+  	width:widthx,
+    height:heightx,
     backgroundColor: '#ccffff',
 
     chartArea: {

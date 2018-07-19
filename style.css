@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Poiret+One|Forum|Exo+2|Permanent+Marker");
+@import url("https://fonts.googleapis.com/css?family=Chela+One|Comfortaa|Concert+One|Forum|Lalezar|Permanent+Marker");
 
 /* mobile first */
 
 body {
     background-color: #ccffff;
-    font-family: Poiret One , sans-serif;
+    font-family: 'Forum', cursive;
     font-weight: bolder;
-    font-size:17px;
+    font-size: 17px;
 
 }
 section {
@@ -17,21 +17,21 @@ footer {
   padding: 0% 10% 0% 10%;
   border-top: 5px solid #2d3436;
 }
-h1 {
-  font-family: 'Forum', cursive;
-  font-size: 40px;
-  color : red;
-  text-shadow: 0px 4px 7px maroon;
+h1{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 25px;
+  color : #2d3436;
 
 }
 h2 {
-  font-size: 24px;
-  padding-right:16px;
-  color : red;
-  text-shadow: 0px 5px 4px maroon;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 22px;
+  color : #2d3436;
+  padding: 0px;
 
 }
 h3 {
+  font-family: 'Permanent Marker', cursive;
   font-size: 20px;
 }
 p {
@@ -39,12 +39,7 @@ p {
   text-justify: inter-word;
   padding-top : 40px;
 }
-#designed{
-  font-size : 17px;
-  color : darkgreen;
-  text-shadow: 0px 5px 4px green;
-  font-weight: bolder;
-  font-style:oblique;
+
 }
 #Gaza, #Nazareth, #london{
   padding-top: 0px;
@@ -81,15 +76,13 @@ p {
 
 
 .txt-campuses {
-  padding: 10% 5% 0% 5%;
+  padding:;
 }
 
 
 
 .photo {
-  width: 300px;
-  height : 200px;
-  padding : 16px 0px 2px 20px;
+  width: 100%;
 }
 
 
@@ -99,6 +92,21 @@ p {
     display: flex;
     justify-content: space-around;
   }
+  .photo {
+    width: 300px;
+    height : 200px;
+    padding : 16px 0px 2px 20px;
+  }
+  h1 {
+    font-size: 40px;
+
 
   }
+  h2 {
+    font-size: 25px;
+  }
+  body {
+      font-size: 22px;
+  }
+
 }

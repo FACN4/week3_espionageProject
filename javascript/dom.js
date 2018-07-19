@@ -9,7 +9,7 @@ pixabyXhrApi("london","lon");
 cohortApiRequest(arrOfCohorts,doFunctions.filterGitHub,projectApiRequest,function(arrOfCohorts){
   //Total commits data prep
   var totalCommitData = doFunctions.cohortCommits(arrOfCohorts);
-  var totalCommitsMaxValue = Object.values(totalCommitData).reduce(function(a, b) {
+    var totalCommitsMaxValue = Object.values(totalCommitData).reduce(function(a, b) {
   	return Math.max(a, b);
   });
   var totalCommitsAxisValue = Math.ceil(totalCommitsMaxValue*1.35);
