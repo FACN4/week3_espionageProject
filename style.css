@@ -3,11 +3,12 @@
 /* mobile first */
 
 body {
+    margin: 0;
+    padding-top: 30px;
     background-color: #ccffff;
     font-family: 'Forum', cursive;
     font-weight: bolder;
     font-size: 17px;
-
 }
 section {
   padding: 6% 10% 10% 10%;
@@ -50,23 +51,19 @@ p {
 .navbar {
     position: fixed;
     top: 0px;
-    left: 0px;
     width: 100%;
     font-family: 'Exo 2', sans-serif;
     display: flex;
     justify-content:space-around;
     background-color: #74b9ff;
-    height: 8%;
+    height: 60px;
     z-index: 1;
 
 }
 .navbar a {
-    width: 100%
-    display: block;
     text-decoration: none;
-    position: relative;
     font-family: 'Exo 2', sans-serif1;
-    padding-top: 10px;
+    align-self: center;
 }
 .navbar a:hover{
     background-color: skyblue;
@@ -85,9 +82,11 @@ p {
   width: 100%;
 }
 
+/*Tablet*/
+@media only screen and (min-width: 450px) {
 
 /* Desktop */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 1100px) {
   .container {
     display: flex;
     justify-content: space-around;

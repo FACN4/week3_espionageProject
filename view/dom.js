@@ -5,8 +5,31 @@ pixabyXhrApi("graffiti", "gza");
 pixabyXhrApi("nazareth", "naz");
 pixabyXhrApi("london", "lon");
 
+//gitHubURLGen
+cohortApiRequest(rawArrOfCohorts);
+
+function cohortApiRequest(arrOfCohorts) {
+  makeAllRequests(arrOfCohorts, function(arrOfCohorts) {
+    var arrOfCohorts = doFunctions.filterGitHub(arrOfCohorts);
+    makeAllProjectRequests(arrOfCohorts, function(arrOfCohorts) {
+      domCharts(arrOfCohorts);
+      domBoxOfShame(arrOfCohorts);
+      domBoxOfShame(arrOfCohorts);
+      var resizeCharts = function() {
+        window.removeEventListener("resize", resizeCharts);
+        setTimeout(function() {
+          window.addEventListener("resize", resizeCharts);
+          domCharts(arrOfCohorts);
+        }, 500);
+      };
+      window.addEventListener("resize", resizeCharts);
+    });
+  });
+}
+
+
 //charts
-function domCharts(arrOfCohorts){
+function domCharts(arrOfCohorts) {
   var totalCommitData = doFunctions.cohortCommits(arrOfCohorts);
   var totalCommitsMaxValue = Object.values(totalCommitData).reduce(function(
     a,
@@ -38,22 +61,21 @@ function domCharts(arrOfCohorts){
   });
 }
 
-
-function domBoxOfShame(arrOfCohorts){
-    //Box of shame
-    var shameArray = doFunctions.boxOfShame(arrOfCohorts);
-    var shameDiv = document.getElementById("boxOfShame");
-    shameArray.forEach(function(commit) {
-      var para = document.createElement("p");
-      para.innerHTML =
-        "<strong>Cohort</strong>: " +
-        commit.cohortName +
-        "<br />" +
-        "<strong>Username: </strong>" +
-        commit.commiterName +
-        "<br />" +
-        "<strong>Commit message: </strong>" +
-        commit.commitMessage;
-      shameDiv.appendChild(para);
-    });
-  }
+function domBoxOfShame(arrOfCohorts) {
+  //Box of shame
+  var shameArray = doFunctions.boxOfShame(arrOfCohorts);
+  var shameDiv = document.getElementById("boxOfShame");
+  shameArray.forEach(function(commit) {
+    var para = document.createElement("p");
+    para.innerHTML =
+      "<strong>Cohort</strong>: " +
+      commit.cohortName +
+      "<br />" +
+      "<strong>Username: </strong>" +
+      commit.commiterName +
+      "<br />" +
+      "<strong>Commit message: </strong>" +
+      commit.commitMessage;
+    shameDiv.appendChild(para);
+  });
+}

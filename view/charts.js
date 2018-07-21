@@ -1,9 +1,11 @@
 function drawChart(id, chartData, topAxisValue, windowWidth) {
   var fontSize = 12;
-
   var widthx = windowWidth*0.75;
-  var heightx = windowWidth*0.6;
-  if (windowWidth>700){
+  heightx = windowWidth*0.6;
+  if (windowWidth>400){
+    var fontSize = 16
+  }
+  if (windowWidth>1100){
     fontSize = 20;
     widthx = windowWidth*0.3;
     heightx = windowWidth*0.35;
