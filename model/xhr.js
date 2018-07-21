@@ -1,13 +1,14 @@
 var YOUR_PERSONAL_ACCESS_TOKEN = access_token;
 
-var arrOfCohorts = [nazareth, gaza, london]; //Cohorts taken from classes
 
-function cohortApiRequest(arrOfCohorts, callback) {
+
+function cohortApiRequest(arrOfCohorts) {
   makeAllRequests(arrOfCohorts, function(arrOfCohorts) {
     var arrOfCohorts = doFunctions.filterGitHub(arrOfCohorts);
     makeAllProjectRequests(arrOfCohorts, function(arrOfCohorts) {
+      domCharts(arrOfCohorts);
+      domBoxOfShame(arrOfCohorts);
       console.log(arrOfCohorts);
-      callback(arrOfCohorts);
     });
   });
 }

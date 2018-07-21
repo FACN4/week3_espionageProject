@@ -30,3 +30,5 @@ var gaza = new construc.Cohort(
 if (typeof module !== "undefined") {
   module.exports = construc;
 }
+
+var rawArrOfCohorts = [nazareth, gaza, london];
