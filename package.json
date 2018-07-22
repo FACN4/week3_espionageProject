@@ -2,8 +2,9 @@
   "name": "week3_espionageproject",
   "version": "1.0.0",
   "description": "Link : will provide later...",
-  "main": "dom.js",
+  "main": "server.js",
   "scripts": {
+    "start": "nodemon src/server.js",
     "test": "nyc tape javascript/test.js | tap-spec"
   },
   "repository": {
@@ -26,6 +27,7 @@
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
+    "nodemon": "^1.18.3",
     "tape-async": "^2.3.0"
   }
 }

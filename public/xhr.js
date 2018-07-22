@@ -1,4 +1,4 @@
-var YOUR_PERSONAL_ACCESS_TOKEN = access_token;
+var YOUR_PERSONAL_ACCESS_TOKEN = 1;
 
 
 
@@ -71,3 +71,7 @@ function pixabyXhrApi(query, id) {
     img.src = response.hits[Math.floor(Math.random() * 6)].largeImageURL;
   });
 }
+
+xhrApi("./api",function(response){
+  console.log(response);
+});

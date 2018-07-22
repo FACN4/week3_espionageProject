@@ -6,7 +6,7 @@ pixabyXhrApi("nazareth", "naz");
 pixabyXhrApi("london", "lon");
 
 //gitHubURLGen
-cohortApiRequest(rawArrOfCohorts);
+// cohortApiRequest(rawArrOfCohorts);
 
 function cohortApiRequest(arrOfCohorts) {
   makeAllRequests(arrOfCohorts, function(arrOfCohorts) {
