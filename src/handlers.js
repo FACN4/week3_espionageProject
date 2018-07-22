@@ -1,7 +1,8 @@
 var path = require("path");
 var fs = require("fs");
 var xhr = require("./XHR");
-var classes = require("./classes");
+
+
 
 var handleHomeRoute = function(request, response) {
   var filepath = path.join(__dirname, "..", "public", "index.html");
@@ -34,13 +35,11 @@ var handlePublic = function(request, response, url) {
     response.end(file);
   })
 };
-
 var handleApi = function(request, response){
-  var ArrOfCohorts = classes.rawArrOfCohorts;
-  xhr.cohortApiRequest(ArrOfCohorts,function(resp){
-    response.writeHead(200, {"Content-Type": "application/json"});
-    response.end(JSON.stringify(resp))
-  });
+  var exportedCohorts = require("./server");
+  response.writeHead(200, {"Content-Type": "application/json"});
+  console.log(exportedCohorts);
+  response.end(JSON.stringify(exportedCohorts));
 };
 
 
