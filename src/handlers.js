@@ -38,7 +38,6 @@ var handlePublic = function(request, response, url) {
 var handleApi = function(request, response){
   var exportedCohorts = require("./server");
   response.writeHead(200, {"Content-Type": "application/json"});
-  console.log(exportedCohorts);
   response.end(JSON.stringify(exportedCohorts));
 };
 

@@ -13,20 +13,22 @@ var construc = {
   }
 };
 
-var nazareth = new construc.Cohort(
-  "Nazareth",
-  "https://api.github.com/orgs/FACN4/repos"
-);
-var london = new construc.Cohort(
-  "London",
-  "https://api.github.com/orgs/fac-14/repos"
-);
-var gaza = new construc.Cohort(
-  "Gaza",
-  "https://api.github.com/orgs/FACG5/repos"
-);
+var rawArrOfCohorts = function(){
+  var nazareth = new construc.Cohort(
+    "Nazareth",
+    "https://api.github.com/orgs/FACN4/repos"
+  );
+  var london = new construc.Cohort(
+    "London",
+    "https://api.github.com/orgs/fac-14/repos"
+  );
+  var gaza = new construc.Cohort(
+    "Gaza",
+    "https://api.github.com/orgs/FACG5/repos"
+  );
 
-var rawArrOfCohorts = [nazareth, gaza, london];
+  return [nazareth, gaza, london];
+}
 
-module.exports = {rawArrOfCohorts: rawArrOfCohorts,
+module.exports = {rawArrOfCohorts,
   construc:construc};
