@@ -3,7 +3,7 @@ var router = require("./router");
 var xhr = require("./XHR");
 var classes = require("./classes");
 
-var port = 3000;
+var port = process.env.PORT || 3000;
 
 var server = http.createServer(router);
 
