@@ -5,27 +5,19 @@ pixabyXhrApi("graffiti", "gza");
 pixabyXhrApi("nazareth", "naz");
 pixabyXhrApi("london", "lon");
 
-//gitHubURLGen
-// cohortApiRequest(rawArrOfCohorts);
-
-function cohortApiRequest(arrOfCohorts) {
-  makeAllRequests(arrOfCohorts, function(arrOfCohorts) {
-    var arrOfCohorts = doFunctions.filterGitHub(arrOfCohorts);
-    makeAllProjectRequests(arrOfCohorts, function(arrOfCohorts) {
-      domCharts(arrOfCohorts);
-      domBoxOfShame(arrOfCohorts);
-      domBoxOfShame(arrOfCohorts);
-      var resizeCharts = function() {
-        window.removeEventListener("resize", resizeCharts);
-        setTimeout(function() {
-          window.addEventListener("resize", resizeCharts);
-          domCharts(arrOfCohorts);
-        }, 500);
-      };
+//gitHub data from server
+xhrApi("./api",function(response){
+  domCharts(response);
+  domBoxOfShame(response);
+  var resizeCharts = function() {
+    window.removeEventListener("resize", resizeCharts);
+    setTimeout(function() {
       window.addEventListener("resize", resizeCharts);
-    });
-  });
-}
+      domCharts(response);
+    }, 500);
+  };
+  window.addEventListener("resize", resizeCharts);
+});
 
 
 //charts

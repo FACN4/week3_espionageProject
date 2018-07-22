@@ -26,9 +26,7 @@ var gaza = new construc.Cohort(
   "https://api.github.com/orgs/FACG5/repos"
 );
 
-
-if (typeof module !== "undefined") {
-  module.exports = construc;
-}
-
 var rawArrOfCohorts = [nazareth, gaza, london];
+
+module.exports = {rawArrOfCohorts: rawArrOfCohorts,
+  construc:construc};

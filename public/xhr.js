@@ -1,44 +1,3 @@
-var YOUR_PERSONAL_ACCESS_TOKEN = 1;
-
-
-
-function cohortApiRequest(arrOfCohorts) {
-  makeAllRequests(arrOfCohorts, function(arrOfCohorts) {
-    var arrOfCohorts = doFunctions.filterGitHub(arrOfCohorts);
-    makeAllProjectRequests(arrOfCohorts, function(arrOfCohorts) {
-      domCharts(arrOfCohorts);
-      domBoxOfShame(arrOfCohorts);
-      console.log(arrOfCohorts);
-    });
-  });
-}
-
-function makeAllProjectRequests(arr, callback) {
-  var numProjects = doFunctions.countProjects(arr);
-  arr.forEach(function(cohort) {
-    makeAllRequests(cohort.recentProjects, function(response) {
-      numProjects -= cohort.recentProjects.length;
-      if (numProjects === 0) {
-        return callback(arr);
-      }
-    });
-  });
-}
-
-//You can feed makeAllRequests an array of cohorts or projects
-function makeAllRequests(arr, callback) {
-  var counter = 0;
-  arr.forEach(function(obj, index) {
-    xhrApi(gitHubURLGen(obj.APIUrl), function(resp) {
-      obj.APIresponse = resp;
-      counter++;
-      if (counter === arr.length) {
-        callback(arr);
-      }
-    });
-  });
-}
-
 function xhrApi(url, callback) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
@@ -51,17 +10,6 @@ function xhrApi(url, callback) {
   xhr.send();
 }
 
-function gitHubURLGen(url) {
-  var ACCESSTOKEN = "?access_token=" + YOUR_PERSONAL_ACCESS_TOKEN;
-  var pageLength = "100";
-  return (
-    url +
-    "?access_token=" +
-    YOUR_PERSONAL_ACCESS_TOKEN +
-    "&per_page=" +
-    pageLength
-  );
-}
 
 function pixabyXhrApi(query, id) {
   var apiKey = "9584813-640bae5525454946bf1d1f8ae";
@@ -71,7 +19,3 @@ function pixabyXhrApi(query, id) {
     img.src = response.hits[Math.floor(Math.random() * 6)].largeImageURL;
   });
 }
-
-xhrApi("./api",function(response){
-  console.log(response);
-});
