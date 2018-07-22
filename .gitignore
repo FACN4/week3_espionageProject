@@ -1,3 +1,5 @@
+model/token.js
+
 node_modules
+
 .nyc_output
-token.js
